@@ -1,6 +1,11 @@
 import React from 'react';
+import styled from 'styled-components'
 import logo from './logo.svg';
 import './App.css';
+
+const Heading = styled.h1`
+  font-size: 2rem;
+`
 
 function App() {
   return (
