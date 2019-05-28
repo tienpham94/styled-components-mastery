@@ -7,23 +7,34 @@ const Heading = styled.h1`
   font-size: 2rem;
 `
 
+const color = "white"
+
 const Button = styled.button`
   background: indigo;
   padding: 5px 10px;
-  color: white;
+  color: ${color};
   font-size: 2rem;
   border: none;
   ${p => p.type === 'cancel' && 'background: tomato'};
 `
 
+const AppWrapper = styled.div`
+  header {
+    background: teal;
+    &:hover {
+      background: red;
+    }
+  }
+`
+
 function App() {
   return (
-    <div className="App">
+    <AppWrapper>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <Heading>
           Edit <code>src/App.js</code> and save to reload.
-        </p>
+        </Heading>
         <Button>Save</Button>
         <Button type="cancel">Cancel</Button>
         <a
@@ -35,7 +46,7 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
+    </AppWrapper>
   );
 }
 
