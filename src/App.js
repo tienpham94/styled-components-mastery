@@ -30,11 +30,15 @@ const AppWrapper = styled.div`
   }
 `;
 
-const Fake = () => (
-  <div>
+const Fake = ({ className }) => (
+  <div className>
     <h2>I'm a fake component</h2>
   </div>
 );
+
+const StyledFake = styled(Fake)`
+  color: red;
+`;
 
 function App() {
   return (
