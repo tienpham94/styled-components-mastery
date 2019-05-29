@@ -1,13 +1,13 @@
-import React from 'react';
-import styled from 'styled-components'
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
+import logo from "./logo.svg";
+import "./App.css";
 
 const Heading = styled.h1`
   font-size: 2rem;
-`
+`;
 
-const color = "white"
+const color = "white";
 
 const Button = styled.button`
   background: indigo;
@@ -15,17 +15,26 @@ const Button = styled.button`
   color: ${color};
   font-size: 2rem;
   border: none;
-  ${p => p.type === 'cancel' && 'background: tomato'};
-`
+`;
+
+const CancelButton = styled(Button)`
+  background: tomato;
+`;
 
 const AppWrapper = styled.div`
   header {
     background: teal;
-    &:hover {
-      background: red;
+    ${Button} {
+      margin-bottom: 2rem;
     }
   }
-`
+`;
+
+const Fake = () => (
+  <div>
+    <h2>I'm a fake component</h2>
+  </div>
+);
 
 function App() {
   return (
@@ -36,7 +45,7 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.
         </Heading>
         <Button>Save</Button>
-        <Button type="cancel">Cancel</Button>
+        <CancelButton>Cancel</CancelButton>
         <a
           className="App-link"
           href="https://reactjs.org"
