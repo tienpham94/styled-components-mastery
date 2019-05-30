@@ -3,15 +3,15 @@ import styled from "styled-components";
 
 import logo from "../logo.svg";
 
-const Header = () => {
+const Header = ({ className }) => {
   return (
-    <AppHeader className="App-header">
+    <header className={className}>
       <img src={logo} alt="logo" className="logo" />
-    </AppHeader>
+    </header>
   );
 };
 
-const AppHeader = styled.header`
+const StyledHeader = styled(Header)`
   background: #524763;
   padding: 10px 5%;
   .logo {
@@ -19,4 +19,4 @@ const AppHeader = styled.header`
   }
 `;
 
-export default Header;
+export default StyledHeader;
