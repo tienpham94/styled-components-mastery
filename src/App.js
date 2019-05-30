@@ -1,10 +1,29 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import logo from "./logo.svg";
 import "./App.css";
 
+const size = {
+  small: 400,
+  med: 960,
+  large: 1140
+};
+
+const above = Object.keys(size).reduce((acc, label) => {
+  acc[label] = (...args) => css`
+    @media (min-width: ${size[label]}px) {
+      ${css(...args)}
+    }
+  `;
+
+  return acc;
+}, {});
+
 const Heading = styled.h1`
   font-size: 2rem;
+  ${above.med`
+    color: blue;
+  `}
 `;
 
 const color = "white";
@@ -24,9 +43,9 @@ const CancelButton = styled(Button)`
 const AppWrapper = styled.div`
   header {
     background: teal;
-    ${Button} {
-      margin-bottom: 2rem;
-    }
+  }
+  ${Button} {
+    margin-bottom: 2rem;
   }
 `;
 
