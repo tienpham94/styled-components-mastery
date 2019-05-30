@@ -19,6 +19,16 @@ const above = Object.keys(size).reduce((acc, label) => {
   return acc;
 }, {});
 
+const below = Object.keys(size).reduce((acc, label) => {
+  acc[label] = (...args) => css`
+    @media (max-width: ${size[label]}px) {
+      ${css(...args)}
+    }
+  `;
+
+  return acc;
+}, {});
+
 const Heading = styled.h1`
   font-size: 2rem;
   ${above.med`
