@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import logo from "../logo.svg";
-import { purple, elevation } from "../utils";
+import { purple, elevation, fixed, serif } from "../utils";
 
 const Header = ({ className }) => {
   return (
@@ -15,6 +15,8 @@ const Header = ({ className }) => {
 const StyledHeader = styled(Header)`
   background: ${purple};
   padding: 10px 5%;
+  ${fixed({ y: 20 })};
+  ${serif};
   ${elevation[2]};
   .logo {
     width: 60px;
