@@ -8,8 +8,8 @@ const BUTTON_MODIFIERS = {
     padding: 3px 10px;
   `,
 
-  cancel: () => `
-    background: tomato; 
+  cancel: ({ theme }) => `
+    background: ${theme.colors.secondary}; 
   `
 };
 
@@ -20,7 +20,7 @@ export const Button = styled.button`
   font-size: 2rem;
   border: none;
   transition: 0.3s ease box-shadow;
-  background: ${teal};
+  background: ${props => props.theme.colors.primary};
   ${elevation[1]};
   &:hover {
     ${elevation[2]};
