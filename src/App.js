@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GlobalStyle from './Global';
 import Header from './layouts/Header';
-import { Button, CancelButton } from './elements';
+import { Card } from './elements';
 
 class App extends Component {
   render() {
@@ -9,11 +9,16 @@ class App extends Component {
       <div>
         <Header />
         <GlobalStyle />
-        <Button>Say Hello</Button>
-        <Button type="cancel">Say Hello</Button>
-        <CancelButton>Don't Say Hello</CancelButton>
-        <Button size="small">Say Hello</Button>
-        <CancelButton size="small">Don't Say Hello</CancelButton>
+        <main>
+          <Card>
+            <h2>Card Heading</h2>
+            <Card.Button modifiers="cancel">Say Hello</Card.Button>
+            <Card.Button>Say Hello</Card.Button>
+          </Card>
+          {/* <Button modifiers="cancel">Say Hello</Button>
+          <Button modifiers="small">Say Hello</Button>
+          <Button modifiers={['small', 'cancel']}>Don't Say Hello</Button> */}
+        </main>
       </div>
     );
   }
